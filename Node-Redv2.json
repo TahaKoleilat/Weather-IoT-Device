@@ -1,0 +1,275 @@
+[
+    {
+        "id": "fbcaa3f72db44e38",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "af38e818d9f60c4c",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c46f871fc2b09733",
+        "type": "subflow",
+        "name": "Subflow 1",
+        "info": "",
+        "in": [],
+        "out": []
+    },
+    {
+        "id": "5b4b332711031ccc",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-custom",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#625fc4",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#4B7930",
+                    "value": "#625fc4",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#625fc4",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#524c4c",
+                    "edited": true
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#9997d9",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#625fc4",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 50,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "01d6d84e7f3b9e15",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.1.106",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "c6599b99d7a84c49",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "465b93d5c87267df",
+        "order": 1,
+        "disp": false,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "465b93d5c87267df",
+        "type": "ui_tab",
+        "name": "Weather",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "141b62605e8471af",
+        "type": "mqtt out",
+        "z": "af38e818d9f60c4c",
+        "name": "MQTT Out",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "01d6d84e7f3b9e15",
+        "x": 650,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "af2592dee0fe4ac8",
+        "type": "mqtt in",
+        "z": "af38e818d9f60c4c",
+        "name": "MQTT In",
+        "topic": "weather/current_weather",
+        "qos": "0",
+        "datatype": "utf8",
+        "broker": "01d6d84e7f3b9e15",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 260,
+        "wires": [
+            [
+                "f650bdde4c816171"
+            ]
+        ]
+    },
+    {
+        "id": "f650bdde4c816171",
+        "type": "function",
+        "z": "af38e818d9f60c4c",
+        "name": "format text",
+        "func": "var output = msg.payload.split(\",\");\nvar elements = output.length\nvar city = output[0]\nvar country_code = output[1]\nvar day = output[2]\nvar month_day = output[3]\nvar year_time = output[4]\nvar temp = output[5]\nvar humidity = output[6]\nvar description = output[7]\nvar wind_speed = output[8]\nvar wind_direction = output[9]\nvar condition = description.toLowerCase();\nif(elements == 11){\n    var gust = output[10]\n}\nconst clear = ['clear sky'];\nconst stormy = ['thunderstorm with light rain',\n'thunderstorm with rain',\n'thunderstorm with heavy rain',\n'light thunderstorm','thunderstorm',\n'heavy thunderstorm',\n'ragged thunderstorm',\n'thunderstorm with light drizzle',\n'thunderstorm with drizzle',\n'thunderstorm with heavy drizzle']\nconst rainy = ['light rain', 'moderate rain', 'heavy intensity rain', \n'very heavy rain', 'extreme rain',\n'freezing rain', 'light intensity shower rain',\n'shower rain', 'heavy intensity shower rain',\n'ragged shower rain', 'light intensity drizzle',\n'drizzle', 'heavy intensity drizzle',\n'light intensity drizzle rain', 'drizzle rain',\n'heavy intensity drizzle rain',\n'shower rain and drizzle',\n'heavy shower rain and drizzle','shower drizzle']\nconst cloudy = ['broken clouds', 'few clouds', 'scattered clouds', 'overcast clouds'];\nconst snowy = ['light snow', 'snow',\n'heavy snow','sleet', 'light shower sleet',\n'shower sleet', 'light rain and snow',\n'rain and snow','light shower snow',\n'shower snow','heavy shower snow'];\nif (cloudy.includes(condition)){\n    condition = \"fa fa-cloud fa-5x\";\n}\nelse if (clear.includes(condition)) {\n    condition = \"fa fa-sun-o fa-5x\";\n}\nelse if (snowy.includes(condition)) {\n    condition = \"fa fa-snowflake-o fa-5x\";\n}\nelse if (stormy.includes(condition)) {\n    condition = \"fa fa-bolt fa-5x\";\n}\nelse if (rainy.includes(condition)) {\n    condition = \"fa fa-tint fa-5x\";\n}\nif(elements == 10){\nmsg.payload = {\"full\":\"Weather conditions in \" + city + \", \" \n+ country_code + \"\\n\" + day + \", \" + month_day + \", \" \n    + year_time + \"\\n\" + \"Temperature: \" + temp + \" C\" \n+ \"\\n\"+\"Humidity: \" + humidity + \" %\\n\" + \"Conditions: \" \n+ description + \"\\n\" + \"Wind: \" + wind_speed \n+ \" km/h from the \" + wind_direction,\"description\":condition}\n}\nelse{\n    msg.payload = {\n        \"full\": \"Weather conditions in \" + city + \", \"\n            + country_code + \"\\n\" + day + \", \" + month_day + \", \"\n            + year_time + \"\\n\" + \"Temperature: \" + temp + \" C\"\n            + \"\\n\" + \"Humidity: \" + humidity + \" %\\n\" + \"Conditions: \"\n            + description + \"\\n\" + \"Wind: \" + wind_speed\n            + \" km/h from the \" + wind_direction + \"\\n Wind Gust: \" + gust + \" m/s\", \"description\": condition\n    }\n}\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 260,
+        "wires": [
+            [
+                "6a3eee662deb83ba"
+            ]
+        ]
+    },
+    {
+        "id": "8e31ec1abbd6b093",
+        "type": "ui_button",
+        "z": "af38e818d9f60c4c",
+        "name": "",
+        "group": "c6599b99d7a84c49",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Retrieve Weather",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "refresh",
+        "payload": "Retrieve Weather Data",
+        "payloadType": "str",
+        "topic": "weather/get_weather",
+        "topicType": "str",
+        "x": 410,
+        "y": 140,
+        "wires": [
+            [
+                "141b62605e8471af"
+            ]
+        ]
+    },
+    {
+        "id": "6a3eee662deb83ba",
+        "type": "ui_template",
+        "z": "af38e818d9f60c4c",
+        "group": "c6599b99d7a84c49",
+        "name": "Text Box",
+        "order": 1,
+        "width": 6,
+        "height": 6,
+        "format": "<i class={{msg.payload.description}} id = \"icon\" aria-hidden=\"true\"></i>\n\n<h4>{{msg.payload.full.split(\"\\n\")[0]}}</h4>\n<h4>{{msg.payload.full.split(\"\\n\")[1]}}</h4>\n<h4>{{msg.payload.full.split(\"\\n\")[2]}}</h4>\n<h4>{{msg.payload.full.split(\"\\n\")[3]}}</h4>\n<h4>{{msg.payload.full.split(\"\\n\")[4]}}</h4>\n<h4>{{msg.payload.full.split(\"\\n\")[5]}}</h4>\n<h4>{{msg.payload.full.split(\"\\n\")[6]}}</h4>\n\n\n\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 760,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    }
+]
