@@ -49,8 +49,8 @@ void wifi_connection()
     esp_event_handler_register(IP_EVENT, IP_EVENT_STA_GOT_IP, wifi_event_handler, NULL);
     wifi_config_t wifi_configuration = {
         .sta = {    
-            .ssid = "Cheikh",                    //Change to WiFi network name
-            .password = "Zc123@MOIM"}};          //Change to WiFi network password
+            .ssid = "",                    //Change to WiFi network name
+            .password = ""}};          //Change to WiFi network password
     esp_wifi_set_config(ESP_IF_WIFI_STA, &wifi_configuration);
     // 3 - Wi-Fi Start Phase
     esp_wifi_start();
@@ -84,7 +84,7 @@ void rest_get()
     strcpy(http_response, "");
 
     esp_http_client_config_t config_get = {
-        .url = "http://api.openweathermap.org/data/2.5/weather?q=Beirut,LB&units=metric&appid=263ef3582b967a7eb181c5e42797a2f6",
+        .url = "http://api.openweathermap.org/data/2.5/weather?q=Beirut,LB&units=metric&appid=",
         .method = HTTP_METHOD_GET,
         .cert_pem = NULL,
         .event_handler = client_event_get_handler};
